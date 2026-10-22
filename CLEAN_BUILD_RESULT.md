@@ -11,12 +11,12 @@ cd FPGA/build
 vivado -mode batch -source .\build_full_relative.tcl
 ```
 
-构建脚本会先：
+构建脚本会：
 
 1. 创建 `xc7a35tfgg484-2` 内存工程
 2. 读取 10 个 XCI
 3. `generate_target all`
-4. 综合、实现、时序和 bitgen
+4. 以分类器 UI 为活动 UI，综合、实现、时序和 bitgen
 
 ## 结果
 
@@ -25,15 +25,15 @@ IP stale/locked critical warnings: 0
 Synthesis: 0 errors, 0 critical warnings
 Route: PASS
 Bitgen: PASS
-WNS: +1.246 ns
-WHS: +0.049 ns
+WNS: +0.674 ns
+WHS: +0.056 ns
 All user specified timing constraints are met.
 ```
 
 重建 bit：
 
 - `FPGA/build/MOTOR_FIR_system_touch_rebuilt.bit`
-- SHA256：`7C5BE8D203CC494C501F454AFE79848FCDD44C08F62022BD948F13870204840B`
+- SHA256：`E82921D9051439A5319363CB3E9D725C122698D06810C0BD7B8B0F669E6DEC0B`
 
 注意：这个 bit 是“干净代码包可重建”证据，现场最终验证使用的是：
 

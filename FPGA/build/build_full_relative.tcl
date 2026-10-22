@@ -6,6 +6,7 @@ set ui_rtl_dir [file join $fpga_dir ui_rtl]
 set ui_mem_dir [file join $fpga_dir ui_mem]
 set ui_constr_dir [file join $fpga_dir ui_constr]
 set vendor_touch_dir [file join $fpga_dir vendor_touch]
+set classifier_rtl_dir [file join $fpga_dir .. Classifier rtl]
 cd $fpga_dir
 create_project -in_memory -part xc7a35tfgg484-2
 foreach ip {fir_L1 fir_L2 fir_N1 fir_N2 fir_N3 fir_RB fir_ENV sine_wave_rom square_wave_rom triangular_wave_rom} {
@@ -18,7 +19,8 @@ foreach f [glob -nocomplain [file join $newdir *.v]] {
 }
 foreach f [glob -nocomplain [file join $newdir scan_b *.v]] { read_verilog $f }
 read_verilog [file join $ui_rtl_dir MOTOR_FIR_p3.v]
-read_verilog [file join $ui_rtl_dir ui_live_top.v]
+read_verilog [file join $classifier_rtl_dir ui_live_top_classifier.v]
+read_verilog [file join $classifier_rtl_dir damage_classifier_l1.v]
 read_verilog [file join $ui_rtl_dir ui_font_rom.v]
 read_verilog [file join $ui_rtl_dir ui_text_plane.v]
 read_verilog [file join $ui_rtl_dir ui_info_plane.v]
@@ -34,7 +36,7 @@ read_verilog [file join $ui_rtl_dir ui_touch_ctrl.v]
 read_verilog [file join $ui_rtl_dir disp_driver.v]
 read_xdc [file join $script_dir Top_touch.xdc]
 read_xdc [file join $ui_constr_dir ui_p3.xdc]
-synth_design -top MOTOR_FIR -part xc7a35tfgg484-2 -include_dirs [list $ui_rtl_dir $newdir] -flatten_hierarchy rebuilt -generic ADC_ENABLE=1
+synth_design -top MOTOR_FIR -part xc7a35tfgg484-2 -include_dirs [list $ui_rtl_dir $newdir $classifier_rtl_dir] -flatten_hierarchy rebuilt -generic ADC_ENABLE=1
 set_clock_groups -asynchronous -group [get_clocks sys_clk] -group [get_clocks clk33]
 set_false_path -from [get_clocks sys_clk] -to [get_clocks clk33]
 set_false_path -from [get_clocks clk33] -to [get_clocks sys_clk]
