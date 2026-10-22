@@ -1,0 +1,27 @@
+#ifndef __INTERNAL_FLASH_STORAGE_H
+#define __INTERNAL_FLASH_STORAGE_H
+
+#include "stm32f4xx.h"
+#include <stdint.h>
+
+#define IF_IMAGE_BASE      0x08080000UL
+#define IF_IMAGE_SIZE      0x00020000UL
+#define IF_HEADER_OFFSET   0x00001000UL
+#define IF_DATA_OFFSET     0x00002000UL
+#define IF_MAX_DATA_BYTES  (IF_IMAGE_SIZE - IF_DATA_OFFSET)
+
+/* Six equal dataset slots occupy the 120 KB data area. */
+#define IF_SLOT_COUNT        6U
+#define IF_HEADER_STRIDE     0x00000040UL
+#define IF_SLOT_SAMPLES      8192U
+#define IF_SLOT_BYTES        16384UL
+#define IF_SLOT_DATA_STRIDE  0x00005000UL
+
+void     InternalFlash_Init(void);
+uint8_t  InternalFlash_EraseImage(void);
+void     InternalFlash_ResetEraseSession(void);
+uint8_t  InternalFlash_WriteMapped(uint32_t offset, const uint8_t *data, uint32_t length);
+uint8_t  InternalFlash_ReadMapped(uint32_t offset, uint8_t *data, uint32_t length);
+const uint8_t *InternalFlash_Pointer(uint32_t offset);
+
+#endif

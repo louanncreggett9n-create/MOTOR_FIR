@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        BIN
+Interface          SPIX4
+Size               16M
+Start Address      0x00000000
+End Address        0x00FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x0021728B    Oct 22 21:23:47 2026    E:/CodexProject/FPGA/FIR_DDS_test/PROJECT_SUMMARY_20261022/11_RELEASE_CANDIDATE_R2/artifacts/MOTOR_FIR_unified_classifier_fixed_20261022_spix4.bit

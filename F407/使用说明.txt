@@ -1,0 +1,17 @@
+STM32F407VGT6 标准库空工程模板
+
+使用方法：
+1. 整个复制本文件夹，然后重命名文件夹。
+2. 进入 Project 目录，打开 STM32F407_Template.uvprojx。
+3. 在 main.c 中开始编写程序。
+
+当前已配置：
+- MCU：STM32F407VGTx
+- 主晶振：8 MHz
+- SYSCLK：168 MHz
+- 调试器：ST-Link
+- Flash 算法：STM32F4xx Flash 1024K
+- 已提供 Delay_Init() 和 Delay_ms() 延时函数
+- 标准外设库源码已放在 STM32 文件夹中
+
+添加其他外设时，在 Keil 的 STM32 分组中加入对应的 stm32f4xx_xxx.c 文件，并在 main.c 中包含对应头文件。

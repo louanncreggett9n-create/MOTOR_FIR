@@ -1,0 +1,7 @@
+"Slot","Name","ExpectedBin","MeasuredBin","Match","Bins","Source","SummaryXr","SummaryXi"
+"0","H","17","17","True","128","hardware_summary","150","207"
+"1","UNBAL","18","18","True","128","hardware_summary","219","148"
+"2","MISAL","27","27","True","128","hardware_summary","38","153"
+"3","BF","16","16","True","128","hardware_summary","162","105"
+"4","BOW","17","17","True","128","hardware_summary","93","96"
+"5","BROKEN","18","18","True","128","reconstructed_128_bins","23296","3555"

@@ -1,0 +1,10 @@
+﻿stage,slot,expected_class,expected_peak_bin,measured_peak_bin,actual_class,conf,sev,route,max_n_bar,scan_ok,touch_ok,result,notes,timestamp
+preflight,,,,,,,,,NOT_SATURATED,PASS,PASS,PASS,manual screen check,2026-10-22
+scan,0,H,17,17,H,,,HW-CHAIN,NOT_SATURATED,PASS,,PASS,user confirmed normal,2026-10-22
+scan,1,UNBAL,18,18,UNBAL,,,HW-CHAIN,NOT_SATURATED,PASS,,PASS,user confirmed normal,2026-10-22
+scan,2,MISAL,27,27,MISAL,,,HW-CHAIN,NOT_SATURATED,PASS,,PASS,user confirmed normal,2026-10-22
+scan,3,BF,16,16,BF,,,HW-CHAIN,NOT_SATURATED,PASS,,PASS,user confirmed normal,2026-10-22
+scan,4,BOW,17,17,BOW,,,HW-CHAIN,NOT_SATURATED,PASS,,PASS,user confirmed normal,2026-10-22
+scan,5,BROKEN,18,18,BROKEN,,,HW-CHAIN,NOT_SATURATED,PASS_RECONSTRUCTED,,PASS,user confirmed normal; one non-peak UART capture byte loss recovered,2026-10-22
+unknown,,UNKNOWN,,,UNKNOWN,0.00,0,HW-CHAIN,,PASS,,PASS,DC TEST user confirmed,2026-10-22
+stability,,,,,,,,,,PASS,,PASS,user reports 30-minute stability test completed,2026-10-22

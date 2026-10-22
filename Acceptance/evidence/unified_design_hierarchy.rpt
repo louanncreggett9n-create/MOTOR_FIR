@@ -1,0 +1,123 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Oct 22 18:14:52 2026
+| Host         : liangdevice running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -hierarchical_depth 4 -file E:/CodexProject/FPGA/FIR_DDS_test/PROJECT_SUMMARY_20261022/10_VIVADO_UNIFIED_PROJECT/unified_design_hierarchy.rpt
+| Design       : MOTOR_FIR
+| Device       : 7a35tfgg484-2
+| Design State : Synthesized
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-------------------------------+-------------------------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
+|            Instance           |                   Module                  | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | DSP48 Blocks |
++-------------------------------+-------------------------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
+| MOTOR_FIR                     |                                     (top) |      18887 |      17625 |     876 |  386 | 18501 |     14 |      0 |           15 |
+|   (MOTOR_FIR)                 |                                     (top) |         86 |         86 |       0 |    0 |   298 |      0 |      0 |            0 |
+|   u_DDS_Module                |                                DDS_Module |         50 |         50 |       0 |    0 |    64 |      6 |      0 |            0 |
+|     (u_DDS_Module)            |                                DDS_Module |         50 |         50 |       0 |    0 |    64 |      0 |      0 |            0 |
+|     u_sine_wave_rom           |                             sine_wave_rom |          0 |          0 |       0 |    0 |     0 |      2 |      0 |            0 |
+|       (u_sine_wave_rom)       |                             sine_wave_rom |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|       U0                      |                        blk_mem_gen_v8_4_2 |          0 |          0 |       0 |    0 |     0 |      2 |      0 |            0 |
+|         (U0)                  |                        blk_mem_gen_v8_4_2 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         inst_blk_mem_gen      |                  blk_mem_gen_v8_4_2_synth |          0 |          0 |       0 |    0 |     0 |      2 |      0 |            0 |
+|     u_square_wave_rom         |                           square_wave_rom |          0 |          0 |       0 |    0 |     0 |      2 |      0 |            0 |
+|       (u_square_wave_rom)     |                           square_wave_rom |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|       U0                      |        blk_mem_gen_v8_4_2__parameterized1 |          0 |          0 |       0 |    0 |     0 |      2 |      0 |            0 |
+|         (U0)                  |        blk_mem_gen_v8_4_2__parameterized1 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         inst_blk_mem_gen      |  blk_mem_gen_v8_4_2_synth__parameterized0 |          0 |          0 |       0 |    0 |     0 |      2 |      0 |            0 |
+|     u_triangular_wave_rom     |                       triangular_wave_rom |          0 |          0 |       0 |    0 |     0 |      2 |      0 |            0 |
+|       (u_triangular_wave_rom) |                       triangular_wave_rom |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|       U0                      |        blk_mem_gen_v8_4_2__parameterized3 |          0 |          0 |       0 |    0 |     0 |      2 |      0 |            0 |
+|         (U0)                  |        blk_mem_gen_v8_4_2__parameterized3 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         inst_blk_mem_gen      |  blk_mem_gen_v8_4_2_synth__parameterized1 |          0 |          0 |       0 |    0 |     0 |      2 |      0 |            0 |
+|   u_DDS_Sampler               |                               DDS_Sampler |        283 |        283 |       0 |    0 |    41 |      0 |      0 |            0 |
+|   u_Frame_Send                |                                Frame_Send |         63 |         63 |       0 |    0 |    32 |      0 |      0 |            0 |
+|   u_Key_shake                 |                                 Key_shake |         25 |         25 |       0 |    0 |    36 |      0 |      0 |            0 |
+|   u_Key_shake_S1              |                               Key_shake_0 |         23 |         23 |       0 |    0 |    36 |      0 |      0 |            0 |
+|   u_Loopback_Buffer           |                           Loopback_Buffer |          2 |          2 |       0 |    0 |    18 |      0 |      0 |            0 |
+|   u_UART_Receive              |                              UART_Receive |         79 |         79 |       0 |    0 |    55 |      0 |      0 |            0 |
+|   u_UART_Send                 |                                 UART_Send |         27 |         27 |       0 |    0 |    41 |      0 |      0 |            0 |
+|   u_ad7606_driver             |                             ad7606_driver |         62 |         62 |       0 |    0 |   207 |      0 |      0 |            0 |
+|   u_ad7606_sampler            |                            ad7606_sampler |         38 |         38 |       0 |    0 |    17 |      0 |      0 |            0 |
+|   u_dataset_player            |                            dataset_player |         82 |         82 |       0 |    0 |    58 |      8 |      0 |            0 |
+|     (u_dataset_player)        |                            dataset_player |         66 |         66 |       0 |    0 |    58 |      0 |      0 |            0 |
+|     u_rom                     |                        dataset_rom_bf10hz |         16 |         16 |       0 |    0 |     0 |      8 |      0 |            0 |
+|   u_led_twinkle               |                               led_twinkle |         19 |         19 |       0 |    0 |    26 |      0 |      0 |            0 |
+|   u_motor_filter_chain        |                        motor_filter_chain |       1479 |       1005 |      88 |  386 |  1551 |      0 |      0 |            7 |
+|     (u_motor_filter_chain)    |                        motor_filter_chain |        583 |        583 |       0 |    0 |     0 |      0 |      0 |            0 |
+|     u_env_ip                  |                                   fir_ENV |        112 |         57 |       0 |   55 |   207 |      0 |      0 |            1 |
+|       (u_env_ip)              |                                   fir_ENV |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|       U0                      |     fir_compiler_v7_2_11__parameterized11 |        112 |         57 |       0 |   55 |   207 |      0 |      0 |            1 |
+|         (U0)                  |     fir_compiler_v7_2_11__parameterized11 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         i_synth               | fir_compiler_v7_2_11_viv__parameterized11 |        112 |         57 |       0 |   55 |   207 |      0 |      0 |            1 |
+|     u_l1_ip                   |                                    fir_L1 |        174 |         68 |      56 |   50 |   265 |      0 |      0 |            1 |
+|       (u_l1_ip)               |                                    fir_L1 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|       U0                      |                      fir_compiler_v7_2_11 |        174 |         68 |      56 |   50 |   265 |      0 |      0 |            1 |
+|         (U0)                  |                      fir_compiler_v7_2_11 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         i_synth               |                  fir_compiler_v7_2_11_viv |        174 |         68 |      56 |   50 |   265 |      0 |      0 |            1 |
+|     u_l2_ip                   |                                    fir_L2 |        162 |         69 |      32 |   61 |   247 |      0 |      0 |            1 |
+|       (u_l2_ip)               |                                    fir_L2 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|       U0                      |      fir_compiler_v7_2_11__parameterized1 |        162 |         69 |      32 |   61 |   247 |      0 |      0 |            1 |
+|         (U0)                  |      fir_compiler_v7_2_11__parameterized1 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         i_synth               |  fir_compiler_v7_2_11_viv__parameterized1 |        162 |         69 |      32 |   61 |   247 |      0 |      0 |            1 |
+|     u_n1_ip                   |                                    fir_N1 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|       (u_n1_ip)               |                                    fir_N1 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|       U0                      |      fir_compiler_v7_2_11__parameterized3 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|         (U0)                  |      fir_compiler_v7_2_11__parameterized3 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         i_synth               |  fir_compiler_v7_2_11_viv__parameterized3 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|     u_n2_ip                   |                                    fir_N2 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|       (u_n2_ip)               |                                    fir_N2 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|       U0                      |      fir_compiler_v7_2_11__parameterized5 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|         (U0)                  |      fir_compiler_v7_2_11__parameterized5 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         i_synth               |  fir_compiler_v7_2_11_viv__parameterized5 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|     u_n3_ip                   |                                    fir_N3 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|       (u_n3_ip)               |                                    fir_N3 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|       U0                      |      fir_compiler_v7_2_11__parameterized7 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|         (U0)                  |      fir_compiler_v7_2_11__parameterized7 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         i_synth               |  fir_compiler_v7_2_11_viv__parameterized7 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|     u_rb_ip                   |                                    fir_RB |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|       (u_rb_ip)               |                                    fir_RB |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|       U0                      |      fir_compiler_v7_2_11__parameterized9 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|         (U0)                  |      fir_compiler_v7_2_11__parameterized9 |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
+|         i_synth               |  fir_compiler_v7_2_11_viv__parameterized9 |        112 |         57 |       0 |   55 |   208 |      0 |      0 |            1 |
+|   u_scan_frame_send           |                           scan_frame_send |        174 |        174 |       0 |    0 |    86 |      0 |      0 |            0 |
+|   u_seg7_display              |                              seg7_display |         43 |         43 |       0 |    0 |    44 |      0 |      0 |            0 |
+|   u_spectrum_scan_b           |                           spectrum_scan_b |       1253 |       1077 |     176 |    0 |   408 |      0 |      0 |            7 |
+|     u_block_mean              |                                block_mean |        125 |        125 |       0 |    0 |    32 |      0 |      0 |            0 |
+|     u_block_ram               |                          block_ram_512x16 |        275 |         99 |     176 |    0 |     0 |      0 |      0 |            0 |
+|     u_coef_rom                |                                coef_rom_b |        138 |        138 |       0 |    0 |     0 |      0 |      0 |            0 |
+|     u_goertzel_core           |                           goertzel_core_b |        207 |        207 |       0 |    0 |   124 |      0 |      0 |            3 |
+|     u_scan_fsm                |                                scan_fsm_b |        121 |        121 |       0 |    0 |    75 |      0 |      0 |            0 |
+|     u_scan_result_reg         |                           scan_result_reg |        388 |        388 |       0 |    0 |   177 |      0 |      0 |            4 |
+|   u_ui_live                   |                               ui_live_top |      15116 |      14504 |     612 |    0 | 15483 |      0 |      0 |            1 |
+|     (u_ui_live)               |                               ui_live_top |       5099 |       5051 |      48 |    0 | 14626 |      0 |      0 |            1 |
+|     u_classifier              |                      damage_classifier_l1 |        314 |        314 |       0 |    0 |   247 |      0 |      0 |            0 |
+|     u_cmd                     |                               ui_uart_cmd |         67 |         67 |       0 |    0 |    68 |      0 |      0 |            0 |
+|     u_disp                    |                               disp_driver |       7672 |       7672 |       0 |    0 |    49 |      0 |      0 |            0 |
+|     u_fmt                     |                                ui_num_fmt |        100 |        100 |       0 |    0 |    67 |      0 |      0 |            0 |
+|     u_font                    |                               ui_font_rom |        117 |        117 |       0 |    0 |     0 |      0 |      0 |            0 |
+|     u_info                    |                             ui_info_plane |        187 |        187 |       0 |    0 |     0 |      0 |      0 |            0 |
+|     u_tab_font                |                             ui_font_rom_1 |        117 |        117 |       0 |    0 |     0 |      0 |      0 |            0 |
+|     u_text                    |                             ui_text_plane |        668 |        104 |     564 |    0 |     0 |      0 |      0 |            0 |
+|     u_touch_ctrl              |                             ui_touch_ctrl |        168 |        168 |       0 |    0 |    89 |      0 |      0 |            0 |
+|     u_touch_dbg               |                              ui_touch_dbg |        158 |        158 |       0 |    0 |    50 |      0 |      0 |            0 |
+|     u_tp                      |                            gt911_touch_v2 |        424 |        424 |       0 |    0 |   262 |      0 |      0 |            0 |
+|       (u_tp)                  |                            gt911_touch_v2 |        221 |        221 |       0 |    0 |   143 |      0 |      0 |            0 |
+|       u_i2c                   |                               i2c_control |        165 |        165 |       0 |    0 |    88 |      0 |      0 |            0 |
+|         (u_i2c)               |                               i2c_control |         70 |         70 |       0 |    0 |    55 |      0 |      0 |            0 |
+|         i2c_bit_shift         |                             i2c_bit_shift |         95 |         95 |       0 |    0 |    33 |      0 |      0 |            0 |
+|       u_int_filter            |                                key_filter |         38 |         38 |       0 |    0 |    31 |      0 |      0 |            0 |
+|     u_txt                     |                                ui_text_wr |         27 |         27 |       0 |    0 |    25 |      0 |      0 |            0 |
++-------------------------------+-------------------------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
+
+
