@@ -1,6 +1,5 @@
 {
-  "version": "16band_l1_centroid_v1",
-  "date": "2026-10-22",
+  "version": "16band_final_block1to4_20261029",
   "classes": [
     "H",
     "UNBAL",
@@ -11,406 +10,351 @@
   ],
   "band_count": 16,
   "bins_per_band": 8,
-  "band_value_min": 0,
-  "band_value_max": 1200,
-  "template_width_bits": 12,
-  "distance_width_bits": 16,
+  "feature_scale": "mag_clip[13:6], sum of eight bins",
+  "classifier": "L1 nearest centroid",
+  "training_blocks": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "holdout_block": 5,
   "centroids": {
     "H": [
-      497,
-      860,
-      1067,
-      878,
-      323,
-      179,
-      352,
-      580,
-      272,
-      242,
-      330,
-      275,
-      179,
-      182,
-      66,
-      1
-    ],
-    "UNBAL": [
-      210,
-      830,
-      928,
-      512,
-      406,
+      463,
+      737,
+      977,
+      855,
       371,
-      284,
-      398,
-      426,
-      315,
-      309,
-      331,
-      251,
-      180,
-      51,
+      292,
+      427,
+      390,
+      283,
+      255,
+      276,
+      259,
+      198,
+      174,
+      48,
+      1
+    ],
+    "UNBAL": [
+      359,
+      749,
+      909,
+      561,
+      452,
+      310,
+      313,
+      420,
+      409,
+      339,
+      274,
+      257,
+      217,
+      205,
+      45,
       1
     ],
     "MISAL": [
-      470,
-      449,
-      880,
-      1077,
-      604,
-      418,
+      397,
+      483,
+      833,
+      925,
       510,
-      219,
-      374,
-      236,
-      157,
-      256,
-      307,
-      172,
-      34,
-      2
+      464,
+      485,
+      218,
+      272,
+      270,
+      207,
+      279,
+      274,
+      190,
+      48,
+      1
     ],
     "BF": [
-      57,
-      94,
-      180,
-      67,
+      61,
+      91,
+      179,
+      65,
       52,
-      33,
-      17,
-      23,
-      22,
-      18,
+      35,
+      30,
+      36,
+      30,
+      27,
+      42,
+      84,
+      151,
+      107,
+      20,
+      0
+    ],
+    "BOW": [
+      423,
+      586,
+      971,
+      610,
+      347,
+      321,
+      396,
+      278,
+      194,
+      229,
+      222,
+      180,
+      173,
+      142,
       34,
-      72,
-      154,
-      104,
-      26,
-      0
+      1
     ],
-    "BOW": [
-      426,
-      688,
-      1064,
-      587,
+    "BROKEN": [
+      474,
+      597,
+      765,
+      396,
+      463,
+      277,
+      370,
       344,
-      312,
-      426,
-      360,
-      254,
-      242,
-      235,
-      170,
-      176,
-      210,
-      50,
-      0
-    ],
-    "BROKEN": [
-      387,
-      569,
-      715,
-      411,
-      413,
-      241,
-      419,
-      257,
-      495,
-      337,
-      239,
-      230,
+      448,
+      310,
+      224,
+      204,
       202,
-      162,
-      25,
-      0
+      179,
+      38,
+      1
     ]
   },
-  "validation": {
-    "resubstitution_accuracy": 1.0,
-    "loo_accuracy": 1.0,
-    "known_distance_max": 166,
-    "known_margin_min": 1145,
-    "loo_known_distance_max": 303,
-    "loo_margin_min": 1032,
-    "recommended_reject_distance": 600,
-    "recommended_min_margin": 300
+  "reject_best_distance_gt": 1250,
+  "reject_margin_lt": 80,
+  "reject_best_distance_gt_by_class": {
+    "BF": 500
   },
-  "training_files": {
-    "H": [
-      "round1_8192_0_H_raw.bin",
-      "round2_8192_0_H_raw.bin"
-    ],
-    "UNBAL": [
-      "round1_8192_1_UNBAL_raw.bin",
-      "round2_8192_1_UNBAL_raw.bin"
-    ],
-    "MISAL": [
-      "round1_8192_2_MISAL_raw.bin",
-      "round2_8192_2_MISAL_raw.bin"
-    ],
-    "BF": [
-      "round1_8192_3_BF_raw.bin",
-      "round2_8192_3_BF_raw.bin"
-    ],
-    "BOW": [
-      "round1_8192_4_BOW_raw.bin",
-      "round2_8192_4_BOW_raw.bin"
-    ],
-    "BROKEN": [
-      "aonly_broken_run1_raw.bin",
-      "aonly_broken_run2_raw.bin",
-      "aonly_broken_run3_raw.bin"
-    ]
+  "threshold_basis": {
+    "loo_max_correct_best": 1215,
+    "loo_min_correct_margin": 89,
+    "note": "Global 1250/80 and BF distance 500 are calibrated from blocks 1-4 only; block 5 is held out. The tighter BF radius rejects near-zero/no-signal vectors that otherwise fall within the global radius of the low-energy BF centroid."
   },
-  "samples": [
+  "leave_one_block_out": [
     {
+      "block": 1,
       "class": "H",
-      "run": 1,
-      "pred": "H",
-      "best_dist": 113,
-      "second_class": "BOW",
-      "second_dist": 1294,
-      "margin": 1181
+      "nearest": "H",
+      "best": 1215,
+      "second": "UNBAL",
+      "second_d": 1652,
+      "margin": 437
     },
     {
+      "block": 1,
+      "class": "UNBAL",
+      "nearest": "UNBAL",
+      "best": 950,
+      "second": "H",
+      "second_d": 1379,
+      "margin": 429
+    },
+    {
+      "block": 1,
+      "class": "MISAL",
+      "nearest": "MISAL",
+      "best": 953,
+      "second": "H",
+      "second_d": 1321,
+      "margin": 368
+    },
+    {
+      "block": 1,
+      "class": "BF",
+      "nearest": "BF",
+      "best": 136,
+      "second": "BOW",
+      "second_d": 4029,
+      "margin": 3893
+    },
+    {
+      "block": 1,
+      "class": "BOW",
+      "nearest": "BOW",
+      "best": 727,
+      "second": "H",
+      "second_d": 816,
+      "margin": 89
+    },
+    {
+      "block": 1,
+      "class": "BROKEN",
+      "nearest": "BROKEN",
+      "best": 640,
+      "second": "UNBAL",
+      "second_d": 1060,
+      "margin": 420
+    },
+    {
+      "block": 2,
       "class": "H",
-      "run": 2,
-      "pred": "H",
-      "best_dist": 116,
-      "second_class": "BOW",
-      "second_dist": 1261,
-      "margin": 1145
+      "nearest": "H",
+      "best": 688,
+      "second": "BOW",
+      "second_d": 1001,
+      "margin": 313
     },
     {
+      "block": 2,
       "class": "UNBAL",
-      "run": 1,
-      "pred": "UNBAL",
-      "best_dist": 98,
-      "second_class": "BROKEN",
-      "second_dist": 1503,
-      "margin": 1405
+      "nearest": "UNBAL",
+      "best": 774,
+      "second": "BROKEN",
+      "second_d": 992,
+      "margin": 218
     },
     {
-      "class": "UNBAL",
-      "run": 2,
-      "pred": "UNBAL",
-      "best_dist": 99,
-      "second_class": "BOW",
-      "second_dist": 1394,
-      "margin": 1295
-    },
-    {
+      "block": 2,
       "class": "MISAL",
-      "run": 1,
-      "pred": "MISAL",
-      "best_dist": 151,
-      "second_class": "BROKEN",
-      "second_dist": 1962,
-      "margin": 1811
+      "nearest": "MISAL",
+      "best": 791,
+      "second": "H",
+      "second_d": 1376,
+      "margin": 585
     },
     {
-      "class": "MISAL",
-      "run": 2,
-      "pred": "MISAL",
-      "best_dist": 152,
-      "second_class": "BOW",
-      "second_dist": 2009,
-      "margin": 1857
-    },
-    {
+      "block": 2,
       "class": "BF",
-      "run": 1,
-      "pred": "BF",
-      "best_dist": 29,
-      "second_class": "BROKEN",
-      "second_dist": 4166,
-      "margin": 4137
+      "nearest": "BF",
+      "best": 197,
+      "second": "BOW",
+      "second_d": 4174,
+      "margin": 3977
     },
     {
-      "class": "BF",
-      "run": 2,
-      "pred": "BF",
-      "best_dist": 30,
-      "second_class": "BROKEN",
-      "second_dist": 4141,
-      "margin": 4111
-    },
-    {
+      "block": 2,
       "class": "BOW",
-      "run": 1,
-      "pred": "BOW",
-      "best_dist": 107,
-      "second_class": "H",
-      "second_dist": 1274,
-      "margin": 1167
+      "nearest": "BOW",
+      "best": 588,
+      "second": "H",
+      "second_d": 1127,
+      "margin": 539
     },
     {
-      "class": "BOW",
-      "run": 2,
-      "pred": "BOW",
-      "best_dist": 105,
-      "second_class": "H",
-      "second_dist": 1270,
-      "margin": 1165
-    },
-    {
+      "block": 2,
       "class": "BROKEN",
-      "run": 1,
-      "pred": "BROKEN",
-      "best_dist": 166,
-      "second_class": "BOW",
-      "second_dist": 1474,
-      "margin": 1308
+      "nearest": "BROKEN",
+      "best": 566,
+      "second": "UNBAL",
+      "second_d": 1118,
+      "margin": 552
     },
     {
-      "class": "BROKEN",
-      "run": 2,
-      "pred": "BROKEN",
-      "best_dist": 154,
-      "second_class": "BOW",
-      "second_dist": 1380,
-      "margin": 1226
-    },
-    {
-      "class": "BROKEN",
-      "run": 3,
-      "pred": "BROKEN",
-      "best_dist": 115,
-      "second_class": "BOW",
-      "second_dist": 1449,
-      "margin": 1334
-    }
-  ],
-  "loo_samples": [
-    {
+      "block": 3,
       "class": "H",
-      "run": 1,
-      "pred": "H",
-      "best_dist": 229,
-      "second_class": "BOW",
-      "second_dist": 1294,
-      "margin": 1065,
-      "correct": true
+      "nearest": "H",
+      "best": 989,
+      "second": "BOW",
+      "second_d": 1234,
+      "margin": 245
     },
     {
+      "block": 3,
+      "class": "UNBAL",
+      "nearest": "H",
+      "best": 834,
+      "second": "BROKEN",
+      "second_d": 1049,
+      "margin": 215
+    },
+    {
+      "block": 3,
+      "class": "MISAL",
+      "nearest": "MISAL",
+      "best": 809,
+      "second": "BOW",
+      "second_d": 1239,
+      "margin": 430
+    },
+    {
+      "block": 3,
+      "class": "BF",
+      "nearest": "BF",
+      "best": 192,
+      "second": "BOW",
+      "second_d": 4155,
+      "margin": 3963
+    },
+    {
+      "block": 3,
+      "class": "BOW",
+      "nearest": "BOW",
+      "best": 720,
+      "second": "H",
+      "second_d": 1383,
+      "margin": 663
+    },
+    {
+      "block": 3,
+      "class": "BROKEN",
+      "nearest": "BROKEN",
+      "best": 833,
+      "second": "UNBAL",
+      "second_d": 958,
+      "margin": 125
+    },
+    {
+      "block": 4,
       "class": "H",
-      "run": 2,
-      "pred": "H",
-      "best_dist": 229,
-      "second_class": "BOW",
-      "second_dist": 1261,
-      "margin": 1032,
-      "correct": true
+      "nearest": "MISAL",
+      "best": 896,
+      "second": "BOW",
+      "second_d": 993,
+      "margin": 97
     },
     {
+      "block": 4,
       "class": "UNBAL",
-      "run": 1,
-      "pred": "UNBAL",
-      "best_dist": 197,
-      "second_class": "BROKEN",
-      "second_dist": 1503,
-      "margin": 1306,
-      "correct": true
+      "nearest": "UNBAL",
+      "best": 837,
+      "second": "H",
+      "second_d": 1216,
+      "margin": 379
     },
     {
-      "class": "UNBAL",
-      "run": 2,
-      "pred": "UNBAL",
-      "best_dist": 197,
-      "second_class": "BOW",
-      "second_dist": 1394,
-      "margin": 1197,
-      "correct": true
-    },
-    {
+      "block": 4,
       "class": "MISAL",
-      "run": 1,
-      "pred": "MISAL",
-      "best_dist": 303,
-      "second_class": "BROKEN",
-      "second_dist": 1962,
-      "margin": 1659,
-      "correct": true
+      "nearest": "MISAL",
+      "best": 652,
+      "second": "H",
+      "second_d": 1496,
+      "margin": 844
     },
     {
-      "class": "MISAL",
-      "run": 2,
-      "pred": "MISAL",
-      "best_dist": 303,
-      "second_class": "BOW",
-      "second_dist": 2009,
-      "margin": 1706,
-      "correct": true
-    },
-    {
+      "block": 4,
       "class": "BF",
-      "run": 1,
-      "pred": "BF",
-      "best_dist": 59,
-      "second_class": "BROKEN",
-      "second_dist": 4166,
-      "margin": 4107,
-      "correct": true
+      "nearest": "BF",
+      "best": 229,
+      "second": "BOW",
+      "second_d": 4091,
+      "margin": 3862
     },
     {
-      "class": "BF",
-      "run": 2,
-      "pred": "BF",
-      "best_dist": 59,
-      "second_class": "BROKEN",
-      "second_dist": 4141,
-      "margin": 4082,
-      "correct": true
-    },
-    {
+      "block": 4,
       "class": "BOW",
-      "run": 1,
-      "pred": "BOW",
-      "best_dist": 212,
-      "second_class": "H",
-      "second_dist": 1274,
-      "margin": 1062,
-      "correct": true
+      "nearest": "BOW",
+      "best": 815,
+      "second": "BROKEN",
+      "second_d": 991,
+      "margin": 176
     },
     {
-      "class": "BOW",
-      "run": 2,
-      "pred": "BOW",
-      "best_dist": 212,
-      "second_class": "H",
-      "second_dist": 1270,
-      "margin": 1058,
-      "correct": true
-    },
-    {
+      "block": 4,
       "class": "BROKEN",
-      "run": 1,
-      "pred": "BROKEN",
-      "best_dist": 248,
-      "second_class": "BOW",
-      "second_dist": 1474,
-      "margin": 1226,
-      "correct": true
-    },
-    {
-      "class": "BROKEN",
-      "run": 2,
-      "pred": "BROKEN",
-      "best_dist": 232,
-      "second_class": "BOW",
-      "second_dist": 1380,
-      "margin": 1148,
-      "correct": true
-    },
-    {
-      "class": "BROKEN",
-      "run": 3,
-      "pred": "BROKEN",
-      "best_dist": 172,
-      "second_class": "BOW",
-      "second_dist": 1449,
-      "margin": 1277,
-      "correct": true
+      "nearest": "BROKEN",
+      "best": 589,
+      "second": "UNBAL",
+      "second_d": 1181,
+      "margin": 592
     }
   ]
 }

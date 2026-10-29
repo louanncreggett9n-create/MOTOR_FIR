@@ -10,13 +10,14 @@
 - `FPGA/ui_constr`：UI 约束
 - `FPGA/build`：FPGA 构建脚本与板级约束
 - `F407`：完整 Keil 工程
-- `Classifier/rtl`：分类器 RTL 与 testbench
-- `Classifier/model`：模型、测试向量和验证记录
+- `Classifier/rtl`：最终分类器 RTL 与 testbench
+- `Classifier/model`：最终模型、5 块验证向量和仿真向量
 
 ## 发布文件
 
-- `Release_R2`：最终普通 bit、SPIx4 bit/MCS/BIN、F407 HEX、数据镜像
-- `Acceptance`：R2 验收、自动扫描、时序、资源和 FIR 修复证据
+- `Release_Final`：最终 bit、F407 HEX、五块数据镜像、模型、跨块验收记录和时序报告
+- `Release_R2`：历史 R2 基准版本
+- `Acceptance`：历史验收、自动扫描、时序、资源和 FIR 修复证据
 - `Tools`：工程重建、bitgen、六类扫描和 F407 数据加载工具
 
 ## 已排除
@@ -25,4 +26,4 @@
 - Keil 编译中间文件和输出目录
 - 历史 `before_*` 备份
 - 临时仿真数据库
-- 与提交无关的旧版 bit
+- 与最终提交无关的调试候选 bit

@@ -1,0 +1,360 @@
+{
+  "version": "16band_final_block1to4_20261029",
+  "classes": [
+    "H",
+    "UNBAL",
+    "MISAL",
+    "BF",
+    "BOW",
+    "BROKEN"
+  ],
+  "band_count": 16,
+  "bins_per_band": 8,
+  "feature_scale": "mag_clip[13:6], sum of eight bins",
+  "classifier": "L1 nearest centroid",
+  "training_blocks": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "holdout_block": 5,
+  "centroids": {
+    "H": [
+      463,
+      737,
+      977,
+      855,
+      371,
+      292,
+      427,
+      390,
+      283,
+      255,
+      276,
+      259,
+      198,
+      174,
+      48,
+      1
+    ],
+    "UNBAL": [
+      359,
+      749,
+      909,
+      561,
+      452,
+      310,
+      313,
+      420,
+      409,
+      339,
+      274,
+      257,
+      217,
+      205,
+      45,
+      1
+    ],
+    "MISAL": [
+      397,
+      483,
+      833,
+      925,
+      510,
+      464,
+      485,
+      218,
+      272,
+      270,
+      207,
+      279,
+      274,
+      190,
+      48,
+      1
+    ],
+    "BF": [
+      61,
+      91,
+      179,
+      65,
+      52,
+      35,
+      30,
+      36,
+      30,
+      27,
+      42,
+      84,
+      151,
+      107,
+      20,
+      0
+    ],
+    "BOW": [
+      423,
+      586,
+      971,
+      610,
+      347,
+      321,
+      396,
+      278,
+      194,
+      229,
+      222,
+      180,
+      173,
+      142,
+      34,
+      1
+    ],
+    "BROKEN": [
+      474,
+      597,
+      765,
+      396,
+      463,
+      277,
+      370,
+      344,
+      448,
+      310,
+      224,
+      204,
+      202,
+      179,
+      38,
+      1
+    ]
+  },
+  "reject_best_distance_gt": 1250,
+  "reject_margin_lt": 80,
+  "reject_best_distance_gt_by_class": {
+    "BF": 500
+  },
+  "threshold_basis": {
+    "loo_max_correct_best": 1215,
+    "loo_min_correct_margin": 89,
+    "note": "Global 1250/80 and BF distance 500 are calibrated from blocks 1-4 only; block 5 is held out. The tighter BF radius rejects near-zero/no-signal vectors that otherwise fall within the global radius of the low-energy BF centroid."
+  },
+  "leave_one_block_out": [
+    {
+      "block": 1,
+      "class": "H",
+      "nearest": "H",
+      "best": 1215,
+      "second": "UNBAL",
+      "second_d": 1652,
+      "margin": 437
+    },
+    {
+      "block": 1,
+      "class": "UNBAL",
+      "nearest": "UNBAL",
+      "best": 950,
+      "second": "H",
+      "second_d": 1379,
+      "margin": 429
+    },
+    {
+      "block": 1,
+      "class": "MISAL",
+      "nearest": "MISAL",
+      "best": 953,
+      "second": "H",
+      "second_d": 1321,
+      "margin": 368
+    },
+    {
+      "block": 1,
+      "class": "BF",
+      "nearest": "BF",
+      "best": 136,
+      "second": "BOW",
+      "second_d": 4029,
+      "margin": 3893
+    },
+    {
+      "block": 1,
+      "class": "BOW",
+      "nearest": "BOW",
+      "best": 727,
+      "second": "H",
+      "second_d": 816,
+      "margin": 89
+    },
+    {
+      "block": 1,
+      "class": "BROKEN",
+      "nearest": "BROKEN",
+      "best": 640,
+      "second": "UNBAL",
+      "second_d": 1060,
+      "margin": 420
+    },
+    {
+      "block": 2,
+      "class": "H",
+      "nearest": "H",
+      "best": 688,
+      "second": "BOW",
+      "second_d": 1001,
+      "margin": 313
+    },
+    {
+      "block": 2,
+      "class": "UNBAL",
+      "nearest": "UNBAL",
+      "best": 774,
+      "second": "BROKEN",
+      "second_d": 992,
+      "margin": 218
+    },
+    {
+      "block": 2,
+      "class": "MISAL",
+      "nearest": "MISAL",
+      "best": 791,
+      "second": "H",
+      "second_d": 1376,
+      "margin": 585
+    },
+    {
+      "block": 2,
+      "class": "BF",
+      "nearest": "BF",
+      "best": 197,
+      "second": "BOW",
+      "second_d": 4174,
+      "margin": 3977
+    },
+    {
+      "block": 2,
+      "class": "BOW",
+      "nearest": "BOW",
+      "best": 588,
+      "second": "H",
+      "second_d": 1127,
+      "margin": 539
+    },
+    {
+      "block": 2,
+      "class": "BROKEN",
+      "nearest": "BROKEN",
+      "best": 566,
+      "second": "UNBAL",
+      "second_d": 1118,
+      "margin": 552
+    },
+    {
+      "block": 3,
+      "class": "H",
+      "nearest": "H",
+      "best": 989,
+      "second": "BOW",
+      "second_d": 1234,
+      "margin": 245
+    },
+    {
+      "block": 3,
+      "class": "UNBAL",
+      "nearest": "H",
+      "best": 834,
+      "second": "BROKEN",
+      "second_d": 1049,
+      "margin": 215
+    },
+    {
+      "block": 3,
+      "class": "MISAL",
+      "nearest": "MISAL",
+      "best": 809,
+      "second": "BOW",
+      "second_d": 1239,
+      "margin": 430
+    },
+    {
+      "block": 3,
+      "class": "BF",
+      "nearest": "BF",
+      "best": 192,
+      "second": "BOW",
+      "second_d": 4155,
+      "margin": 3963
+    },
+    {
+      "block": 3,
+      "class": "BOW",
+      "nearest": "BOW",
+      "best": 720,
+      "second": "H",
+      "second_d": 1383,
+      "margin": 663
+    },
+    {
+      "block": 3,
+      "class": "BROKEN",
+      "nearest": "BROKEN",
+      "best": 833,
+      "second": "UNBAL",
+      "second_d": 958,
+      "margin": 125
+    },
+    {
+      "block": 4,
+      "class": "H",
+      "nearest": "MISAL",
+      "best": 896,
+      "second": "BOW",
+      "second_d": 993,
+      "margin": 97
+    },
+    {
+      "block": 4,
+      "class": "UNBAL",
+      "nearest": "UNBAL",
+      "best": 837,
+      "second": "H",
+      "second_d": 1216,
+      "margin": 379
+    },
+    {
+      "block": 4,
+      "class": "MISAL",
+      "nearest": "MISAL",
+      "best": 652,
+      "second": "H",
+      "second_d": 1496,
+      "margin": 844
+    },
+    {
+      "block": 4,
+      "class": "BF",
+      "nearest": "BF",
+      "best": 229,
+      "second": "BOW",
+      "second_d": 4091,
+      "margin": 3862
+    },
+    {
+      "block": 4,
+      "class": "BOW",
+      "nearest": "BOW",
+      "best": 815,
+      "second": "BROKEN",
+      "second_d": 991,
+      "margin": 176
+    },
+    {
+      "block": 4,
+      "class": "BROKEN",
+      "nearest": "BROKEN",
+      "best": 589,
+      "second": "UNBAL",
+      "second_d": 1181,
+      "margin": 592
+    }
+  ]
+}

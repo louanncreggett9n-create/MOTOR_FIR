@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Serial 16-band L1 nearest-centroid classifier.
+// Final candidate serial 16-band L1 nearest-centroid classifier (blocks 1-4).
 // Bins arrive in ascending order from the existing scan result stream.
 //////////////////////////////////////////////////////////////////////////////////
 module damage_classifier_l1 (
@@ -25,8 +25,9 @@ module damage_classifier_l1 (
     localparam S_CALC  = 2'd1;
     localparam S_DONE  = 2'd2;
 
-    localparam [15:0] REJECT_DISTANCE = 16'd600;
-    localparam [15:0] REJECT_MARGIN   = 16'd300;
+    localparam [15:0] REJECT_DISTANCE = 16'd1250;
+    localparam [15:0] REJECT_MARGIN   = 16'd80;
+    localparam [15:0] REJECT_BF_DISTANCE = 16'd500;
 
     `include "classifier_templates_16band.vh"
 
@@ -53,6 +54,7 @@ module damage_classifier_l1 (
     wire [24:0] mag_clip = (mag_sum > 25'd9600) ? 25'd9600 : mag_sum;
     wire [7:0]  bin_height = mag_clip[13:6];
     wire [15:0] calc_margin = (second_dist > best_dist) ? (second_dist - best_dist) : 16'd0;
+    wire [15:0] class_reject_distance = (best_cls == 3'd3) ? REJECT_BF_DISTANCE : REJECT_DISTANCE;
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -154,7 +156,7 @@ module damage_classifier_l1 (
                     result_best_dist   <= best_dist;
                     result_second_dist <= second_dist;
                     result_margin      <= calc_margin;
-                    if ((best_dist > REJECT_DISTANCE) || (calc_margin < REJECT_MARGIN)) begin
+                    if ((best_dist > class_reject_distance) || (calc_margin < REJECT_MARGIN)) begin
                         result_cls     <= 4'd7;
                         result_conf    <= 8'd0;
                         result_unknown <= 1'b1;

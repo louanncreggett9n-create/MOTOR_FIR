@@ -2,30 +2,25 @@
 
 ## FPGA
 
-工作目录：
-
-```text
-FPGA/build
-```
-
-执行：
-
-```powershell
-vivado -mode batch -source .\build_full_relative.tcl
-```
-
-输出：
-
-```text
-FPGA/build/MOTOR_FIR_system_touch_rebuilt.bit
-```
-
-统一图形工程的重建脚本位于：
+统一图形工程：
 
 ```text
 Tools/create_unified_project.tcl
 Tools/verify_unified_project.tcl
 Tools/build_unified_bit.tcl
+```
+
+独立构建入口：
+
+```powershell
+cd FPGA/build
+vivado -mode batch -source .\build_full_relative.tcl
+```
+
+最终发布位流：
+
+```text
+Release_Final/MOTOR_FIR_unified_classifier_block1to4_final_20261029.bit
 ```
 
 ## F407
@@ -39,19 +34,19 @@ F407/Project/STM32F407_DatasetPlayer.uvprojx
 烧录：
 
 ```text
-Release_R2/STM32F407_multidataset_6slot_8192_20261021.hex
+Release_Final/STM32F407_multidataset_6slot_8192_20261021.hex
 ```
 
-数据镜像：
+五块数据镜像位于：
 
 ```text
-Release_R2/multidataset_8192_0x1000_0x1FFFF.bin
+Release_Final/images/
 ```
 
-首次或更换数据时运行：
+首次或更换数据时使用：
 
 ```powershell
-.\Tools\load_multidataset_com.ps1 -PortName COM5 -ImageFile .\Release_R2\multidataset_8192_0x1000_0x1FFFF.bin
+.\Tools\load_multidataset_com.ps1 -PortName COM5 -ImageFile .\Release_Final\images\block5_six_slot.bin
 ```
 
 ## 自动扫描
@@ -62,4 +57,4 @@ Release_R2/multidataset_8192_0x1000_0x1FFFF.bin
 
 ## Flash 镜像
 
-`Release_R2` 中的 `spix4.bit/mcs/bin` 已从 R2 实现结果生成，但 MX25L12845G 烧录尚未验证。现场优先使用 JTAG 普通 bit。
+`Release_R2` 中的 SPIx4 bit/MCS/BIN 属于历史 R2 构建，MX25L12845G 烧录尚未验证。最终现场验证使用 `Release_Final` 的 JTAG 普通 bit。
