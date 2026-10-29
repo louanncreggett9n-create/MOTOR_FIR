@@ -28,6 +28,8 @@ TNS/THS: 0
 - block5 独立硬件测试：6/6 PASS
 - Vivado xsim：14/14 PASS，包含全零输入 `UNKNOWN`
 - 分类器延迟：97 个时钟周期，约 1.94 微秒
+- N1 800 SPS 短路噪声 RMS：0.9047 LSB
+- N1 100 Hz 正弦 SNR：不低于 67.95 dB，ENOB（当前幅度）10.99 bit
 
 ## 功能
 
@@ -88,7 +90,7 @@ F407/Project/STM32F407_DatasetPlayer.uvprojx
 - 五个数据块来自项目数据集，block5 是独立数据块测试，不等于真实电机现场跨设备泛化。
 - 留一块交叉验证仍有 2/24 错误，UNBAL 与 H、H 与 MISAL 的边界并非完全分离。
 - MX25L12845G Flash 烧录尚未验证；现场使用 JTAG/RAM 配置。
-- SNR、SINAD、THD 和 ENOB 尚未实测。
+- SNR、SINAD、THD 和 ENOB 已在 N1 800 SPS、100 Hz 诊断链路上实测；该结果不是 AD7606 裸芯片 ENOB。
 
 ## 关键词
 

@@ -53,3 +53,15 @@ See `CROSS_BLOCK_VALIDATION.md` and `block5_final_bfgate_results_20261030.csv` f
 ## Scope and limitations
 
 The five blocks come from the project dataset. Block 5 is an independent block split, not a new field-motor installation. The release does not establish generalization to arbitrary motors, sensor mounting conditions, loads, or noise environments. SNR, SINAD, THD, and ENOB were not measured in this release.
+## N1 noise and SNR/ENOB
+
+The final bitstream was also measured on the 100 Hz-centered N1 800 SPS diagnostic path:
+
+- shorted-input AC RMS: 0.9047 LSB;
+- conservative sine-residual SNR: 67.95 dB;
+- SINAD: 67.95 dB;
+- THD: no worse than -97.37 dB;
+- ENOB at the measured 5.21 kLSB sine amplitude: 10.99 bit;
+- full-scale-normalized ENOB: 13.65 bit.
+
+Two non-overlapping 4096-point clean windows from the 60-second sine capture gave consistent results. See `NOISE_SNR.md`. This is an N1 diagnostic-path result, not an AD7606 die-only ENOB.

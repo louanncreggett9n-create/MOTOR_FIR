@@ -20,6 +20,9 @@ SHA256: 10115BE11CC0DFCBF51D9F80FB0C04393D47CB70FF4F3EDA3DBFE613574564CD
 | Timing constraints | PASS |
 | WNS | 0.237 ns |
 | WHS | 0.046 ns |
+| N1 shorted-input noise RMS | 0.9047 LSB |
+| N1 100 Hz sine SNR | >= 67.95 dB |
+| N1 ENOB at test amplitude | 10.99 bit |
 
 ## Model decision rules
 
@@ -34,4 +37,4 @@ BF:     BEST <= 500 and MARGIN >= 80
 - Holdout block: 5.
 - Block 5 was not used to compute centroids or thresholds.
 - The five blocks are dataset replay blocks, not independent field measurements.
-- Noise, SNR, SINAD, THD, and ENOB are outside this acceptance record.
+- Noise, SNR, SINAD, THD, and ENOB are measured on the N1 800 SPS diagnostic path, not on the AD7606 die alone.

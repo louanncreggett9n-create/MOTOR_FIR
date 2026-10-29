@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-30",
+  "path": "N1 800 SPS diagnostic channel, 100 Hz centered",
+  "sample_rate_hz": 800.051203,
+  "bit_sha256": "10115BE11CC0DFCBF51D9F80FB0C04393D47CB70FF4F3EDA3DBFE613574564CD",
+  "f407_hex_sha256": "22BD56472F09477DBF1889F6485D49C38388C9157512DF40142A22C08CC4D479",
+  "noise_short": {
+    "mean_lsb": 0.0003125,
+    "peak_to_peak_lsb": 21,
+    "max_lsb": 10,
+    "std_lsb": 0.904753809653443,
+    "bad_checksum_frames": 29,
+    "samples": 48000,
+    "min_lsb": -11,
+    "ac_rms_lsb": 0.9047443850855058
+  },
+  "sine_windows": [
+    {
+      "samples": 4096,
+      "thd_db": -97.3705462696053,
+      "sinad_db": 68.19047944215497,
+      "enob_from_sinad": 11.034963362484214,
+      "start_sample": 14336,
+      "fundamental_hz": 100.00644430364358,
+      "fundamental_peak_lsb": 5208.395219978851,
+      "residual_noise_rms_lsb": 1.4343824462408494,
+      "enob_full_scale_corrected": 13.688604569475658,
+      "snr_db": 68.1904794413593
+    },
+    {
+      "samples": 4096,
+      "thd_db": -103.92067935333893,
+      "sinad_db": 67.94759324700902,
+      "enob_from_sinad": 10.994616818440036,
+      "start_sample": 28672,
+      "fundamental_hz": 100.00642677018274,
+      "fundamental_peak_lsb": 5211.214434249578,
+      "residual_noise_rms_lsb": 1.4758570152376211,
+      "enob_full_scale_corrected": 13.647477253022796,
+      "snr_db": 67.94759324683295
+    }
+  ],
+  "conservative": {
+    "snr_db": 67.94759324683295,
+    "enob_full_scale_normalized": 13.647477253022796,
+    "enob_at_test_amplitude": 10.994616818440036,
+    "thd_db": -97.3705462696053,
+    "sinad_db": 67.94759324700902
+  },
+  "shorted_noise_snr_crosscheck_db": 72.19317026704567,
+  "limitations": [
+    "N1 800 SPS path only",
+    "clean 4096-point windows selected from a capture with UART frame loss",
+    "F407/TPC116S4 source not a calibrated laboratory source",
+    "full-scale-normalized ENOB is extrapolated"
+  ]
+}

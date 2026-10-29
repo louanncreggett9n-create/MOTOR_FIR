@@ -24,11 +24,22 @@
     "global_best_max": 1250,
     "global_margin_min": 80
   },
-  "noise_snr_enob_measured": false,
+  "noise_snr_enob_measured": true,
   "evidence": [
     "CROSS_BLOCK_VALIDATION.md",
     "block5_final_bfgate_results_20261030.csv",
     "timing_summary.rpt",
-    "model.json"
-  ]
+    "model.json",
+    "NOISE_SNR.md",
+    "noise_snr_final.json"
+  ],
+  "noise_snr": {
+    "path": "N1 800 SPS",
+    "noise_rms_lsb": 0.9047443850855058,
+    "snr_db": 67.94759324683295,
+    "sinad_db": 67.94759324700902,
+    "thd_db": -97.3705462696053,
+    "enob_at_test_amplitude": 10.994616818440036,
+    "enob_full_scale_normalized": 13.647477253022796
+  }
 }
